@@ -11,8 +11,8 @@ export class GeneralService {
   constructor(private http:HttpClient) { }
 
 
-  getData():Observable<dataModel[]>{
+ /* getData():Observable<dataModel[]>{
 return this.http.get<dataModel[]>("http://localhost:3000/posts")
 
-  }
+  }*/
 }
