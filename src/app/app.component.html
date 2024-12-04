@@ -1,10 +1,10 @@
 <div class="container p-3">
   <div class="input-group mb-3">
-    <form>
-    <input type="text" class="form-control mb-1" placeholder="Title.." aria-label="Title">
-    <input type="text" class="form-control mb-3" placeholder="Body.." aria-label="Body">
-    <button class="btn btn-primary" type="submit"S>Submit</button>
-  </form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text" class="form-control mb-1" placeholder="Title.." aria-label="Title" formControlName="title" >
+      <input type="text" class="form-control mb-3" placeholder="Body.." aria-label="Body" formControlName="body">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
   </div>
 
   <table class="table table-bordered text-center">
@@ -20,8 +20,19 @@
           Body
         </th>
       </tr>
-
     </thead>
-    
+    <tbody>
+      <tr *ngFor="let user of dataGeneral">
+        <td>
+          {{user.id}}
+        </td>
+        <td>
+          {{user.title}}
+        </td>
+        <td>
+          {{user.body}}
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
